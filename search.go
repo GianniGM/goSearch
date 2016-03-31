@@ -26,13 +26,15 @@ func SendRequest(termToSearch string) {
 	} else {
 		var m googleSearchResponse
 		fmt.Println(resp.Status)
+
 		defer resp.Body.Close()
 		output, _ := ioutil.ReadAll(resp.Body)
 
 		if err = json.Unmarshal(output, &m); err != nil {
-			fmt.Println(m.Details)
+			fmt.Println("error on unmarshalling", err)
 		} else {
-			fmt.Println("error on unmarshalling")
+			fmt.Println(m.Response)
+			fmt.Println(string(output))
 		}
 	}
 }
