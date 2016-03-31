@@ -6,15 +6,12 @@ import (
 	"io/ioutil"
 	"net/http"
 	"net/url"
-	"os"
+	"strings"
 )
 
-func main() {
-	SendRequest("ciao mondo")
-}
-
-func SendRequest(termToSearch string) {
+func SendGoogleSearchRequest(termToSearch string) string {
 	//TODO: must formatting termToSearch to url mode
+	response := "sorry! nothing found"
 
 	url := "http://ajax.googleapis.com/ajax/services/search/web?v=1.0&q=" + url.QueryEscape(termToSearch)
 	fmt.Println(url)
@@ -22,7 +19,6 @@ func SendRequest(termToSearch string) {
 	//	making httpRequest
 	if resp, err := http.Get(url); err != nil {
 		fmt.Printf("FATAL: Could not parse request: %v\n", err)
-		os.Exit(1)
 	} else {
 		var m googleSearchResponse
 		fmt.Println(resp.Status)
@@ -30,14 +26,19 @@ func SendRequest(termToSearch string) {
 		defer resp.Body.Close()
 		output, _ := ioutil.ReadAll(resp.Body)
 
-		// fmt.Println(string(output))
+		//fmt.Println(string(output))
 
 		if err = json.Unmarshal(output, &m); err != nil {
 			fmt.Println("error on unmarshalling", err)
 		} else {
-			fmt.Println("details" + m.Details)
-			fmt.Println("urls: " + m.Response.Results[0].URL)
-			//fmt.Println(string(output))
+			var contents [3]string
+			for i := 0; i < 3; i++ {
+				contents[i] = strings.Replace(m.ResponseData.Results[i].Content, "<b>", "", -1)
+				contents[i] = strings.Replace(contents[i], "</b>", "", -1)
+			}
+
+			response = (contents[0] + "\n" + m.ResponseData.Results[0].Url + "\n\n" + contents[1] + "\n" + m.ResponseData.Results[1].Url + "\n\n" + contents[2] + "\n" + m.ResponseData.Results[2].Url)
 		}
 	}
+	return response
 }
