@@ -3,12 +3,12 @@ package main
 type googleSearchResponse struct {
 	Response googleResponseData `json: "responseData"`
 	Details  string             `json: "responseDetails"`
-	Status   int64              `json: "responseStatus"`
+	Status   float64            `json: "responseStatus"`
 }
 
 type googleResponseData struct {
-	results []googleResults `json: "results"`
-	cursor  googleCursor    `json: "cursor"`
+	Results []googleResults `json: "results"`
+	Cursor  googleCursor    `json: "cursor"`
 }
 
 type googleResults struct {
@@ -19,19 +19,19 @@ type googleResults struct {
 	cURL        string `json: "cacheUrl"`
 	title       string `json: "title"`
 	titleNoForm string `json: "titleNoFormatting"`
-	content     string `json: "json: content"`
+	content     string `json: "content"`
 }
 
 type googleCursor struct {
-	resultCount          int64         `json: "resultCount"`
+	resultCount          string        `json: "resultCount"`
 	pages                []googlePages `json: "pages"`
-	estimatedResultCount int64         `json: "estimatedResultCount"`
-	currentPageIndex     int64         `json: "currentPageIndex"`
+	estimatedResultCount string        `json: "estimatedResultCount"`
+	currentPageIndex     string        `json: "currentPageIndex"`
 	moreResultsUrl       string        `json: "moreResultsUrl"`
-	searchResultTime     float32       `json: "searchResultTime"`
+	searchResultTime     string        `json: "searchResultTime"`
 }
 
 type googlePages struct {
-	start int `json: "start"`
-	label int `json: "label"`
+	start string `json: "start"`
+	label int    `json: "label"`
 }

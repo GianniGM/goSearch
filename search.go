@@ -30,11 +30,14 @@ func SendRequest(termToSearch string) {
 		defer resp.Body.Close()
 		output, _ := ioutil.ReadAll(resp.Body)
 
+		// fmt.Println(string(output))
+
 		if err = json.Unmarshal(output, &m); err != nil {
 			fmt.Println("error on unmarshalling", err)
 		} else {
-			fmt.Println(m.Response)
-			fmt.Println(string(output))
+			fmt.Println("details" + m.Details)
+			fmt.Println("urls: " + m.Response.Results[0].URL)
+			//fmt.Println(string(output))
 		}
 	}
 }
