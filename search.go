@@ -3,6 +3,7 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+	"html"
 	"io/ioutil"
 	"net/http"
 	"net/url"
@@ -31,13 +32,21 @@ func SendGoogleSearchRequest(termToSearch string) string {
 		if err = json.Unmarshal(output, &m); err != nil {
 			fmt.Println("error on unmarshalling", err)
 		} else {
-			var contents [3]string
-			for i := 0; i < 3; i++ {
-				temp := strings.Replace(m.ResponseData.Results[i].Content, "<b>", "", -1)
-				contents[i] = strings.Replace(temp, "</b>", "", -1)
-			}
+			if len(m.ResponseData.Results) > 0 {
+				n := 3
+				if len(m.ResponseData.Results) < 3 {
+					n = len(m.ResponseData.Results)
+				}
+				// var contents [n]string
+				response = ""
+				for i := 0; i < n; i++ {
+					temp := strings.Replace(m.ResponseData.Results[i].Content, "<b>", "", -1)
+					content := strings.Replace(temp, "</b>", "", -1)
+					response = response + html.UnescapeString(content+"\n"+m.ResponseData.Results[i].Url+"\n\n")
+				}
 
-			response = (contents[0] + "\n" + m.ResponseData.Results[0].Url + "\n\n" + contents[1] + "\n" + m.ResponseData.Results[1].Url + "\n\n" + contents[2] + "\n" + m.ResponseData.Results[2].Url)
+				//response = html.UnescapeString((contents[0] + "\n" + m.ResponseData.Results[0].Url + "\n\n" + contents[1] + "\n" + m.ResponseData.Results[1].Url + "\n\n" + contents[2] + "\n" + m.ResponseData.Results[2].Url))
+			}
 		}
 	}
 	return response
