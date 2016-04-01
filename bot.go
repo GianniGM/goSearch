@@ -9,8 +9,8 @@ func main() {
 
 	var bot telebot.Bot
 	conf := telebot.Configuration{
-		BotName: "Namebot",
-		ApiKey:  "AAAAAAAAAAAAAAAAbbbbbbbbbbFFFFFFFFFFFFFFFFDDDDDDD",
+		BotName: "searchbot",
+		ApiKey:  "AAAAAAAAAAAAAAAAAAAABBBBBBBBCCCCCCCC",
 	}
 
 	// bot start è una funzione che prende le configurazioni per collegarsi
@@ -22,11 +22,9 @@ func main() {
 		var answer string
 		switch mess {
 		case "/start":
-			answer = "Hi Dunecka, welcome to SearchGobot!\nType a term you want to search or /test or /help"
+			answer = "Welcome to SearchGobot!\nType a term you want to search or /test or /help"
 		case "/help":
 			answer = "It's simple, just type what you want to search using google"
-		case "/test":
-			answer = "Ciao! Un bot non dovrebbe flirtare ma devo dire che sei molto bella! :)"
 		case "":
 			answer = "Welcome to SearchGobot type a term you want to search"
 		default:
