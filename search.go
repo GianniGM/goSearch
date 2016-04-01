@@ -33,8 +33,8 @@ func SendGoogleSearchRequest(termToSearch string) string {
 		} else {
 			var contents [3]string
 			for i := 0; i < 3; i++ {
-				contents[i] = strings.Replace(m.ResponseData.Results[i].Content, "<b>", "", -1)
-				contents[i] = strings.Replace(contents[i], "</b>", "", -1)
+				temp := strings.Replace(m.ResponseData.Results[i].Content, "<b>", "", -1)
+				contents[i] = strings.Replace(temp, "</b>", "", -1)
 			}
 
 			response = (contents[0] + "\n" + m.ResponseData.Results[0].Url + "\n\n" + contents[1] + "\n" + m.ResponseData.Results[1].Url + "\n\n" + contents[2] + "\n" + m.ResponseData.Results[2].Url)
