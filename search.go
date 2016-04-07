@@ -34,6 +34,7 @@ func SendGoogleSearchRequest(termToSearch string) string {
 		} else {
 			if len(m.ResponseData.Results) > 0 {
 				n := 3
+
 				if len(m.ResponseData.Results) < 3 {
 					n = len(m.ResponseData.Results)
 				}
