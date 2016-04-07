@@ -20,17 +20,42 @@ func main() {
 
 	//aggiungi un contatore che si incremente ogni volta che facciamo /next e cerchiamo il successivo
 	//cerchiamo nell'array di sendgooglesearchrequest(mess, i) quando i arriva al massimo answer prende valore "finished"
+	index := 0
+
+	var search []string
 	bot.Start(conf, func(mess string) (string, error) {
 		var answer string
 		switch mess {
+		case "":
+			answer = "Welcome to SearchGobot!\nType a term you want to search or /help"
 		case "/start":
-			answer = "Welcome to SearchGobot!\nType a term you want to search or /test or /help"
+			answer = "Welcome to SearchGobot!\nType a term you want to search or /help"
 		case "/help":
 			answer = "It's simple, just type what you want to search using google"
-		case "":
-			answer = "Welcome to SearchGobot type a term you want to search"
+		case "/prev":
+			index--
+			if index <= 0 {
+				index = 0
+				answer = search[index] + "/next ➡️\n."
+			} else {
+				answer = search[index] + "⬅️ /prev ---- /next ➡️\n."
+			}
+
+		case "/next":
+			index++
+			if index < len(search) {
+				answer = search[index] + "⬅️ /prev ---- /next ➡️\n."
+			} else {
+				answer = "no more results! :)\n⬅️ /prev"
+			}
 		default:
-			answer = SendGoogleSearchRequest(mess)
+			index = 0
+			search = SendGoogleSearchRequest(mess)
+			if search == nil {
+				answer = "Sorry! Not found :("
+			} else {
+				answer = search[index] + "/next ➡️\n."
+			}
 		}
 		return answer, nil
 	})
