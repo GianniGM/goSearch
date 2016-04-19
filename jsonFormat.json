@@ -1,0 +1,89 @@
+{
+  "responseData": {
+    "results": [
+      {
+        "GsearchResultClass": "GwebSearch",
+        "unescapedUrl": "https://golang.org/",
+        "url": "https://golang.org/",
+        "visibleUrl": "golang.org",
+        "cacheUrl": "http://www.google.com/search?q=cache:rie1WixWbVcJ:golang.org",
+        "title": "The Go Programming Language",
+        "titleNoFormatting": "The Go Programming Language",
+        "content": "Documentation, source, and other resources for Google&#39;s Go language."
+      },
+      {
+        "GsearchResultClass": "GwebSearch",
+        "unescapedUrl": "https://github.com/golang",
+        "url": "https://github.com/golang",
+        "visibleUrl": "github.com",
+        "cacheUrl": "http://www.google.com/search?q=cache:It6zosxIs54J:github.com",
+        "title": "<b>golang</b> - GitHub",
+        "titleNoFormatting": "golang - GitHub",
+        "content": "GitHub is where people build software. More than 14 million people use GitHub \nto discover, fork, and contribute to over 35 million projects."
+      },
+      {
+        "GsearchResultClass": "GwebSearch",
+        "unescapedUrl": "https://github.com/golang/go",
+        "url": "https://github.com/golang/go",
+        "visibleUrl": "github.com",
+        "cacheUrl": "http://www.google.com/search?q=cache:Vwsjgh0zwzEJ:github.com",
+        "title": "GitHub - <b>golang</b>/go: The Go programming language",
+        "titleNoFormatting": "GitHub - golang/go: The Go programming language",
+        "content": "The Go programming language. Contribute to go development by creating an \naccount on GitHub."
+      },
+      {
+        "GsearchResultClass": "GwebSearch",
+        "unescapedUrl": "https://www.reddit.com/r/golang",
+        "url": "https://www.reddit.com/r/golang",
+        "visibleUrl": "www.reddit.com",
+        "cacheUrl": "http://www.google.com/search?q=cache:WuYKHPcyrwcJ:www.reddit.com",
+        "title": "r/<b>Golang</b> - Reddit",
+        "titleNoFormatting": "r/Golang - Reddit",
+        "content": "If you encounter an issue, please mail conduct@<b>golang</b>.org. Documentation ... \nGo testfixtures: Rails&#39; like test fixtures for <b>Golang</b> (github.com). submitted 3 hours\n ..."
+      }
+    ],
+    "cursor": {
+      "resultCount": "366.000",
+      "pages": [
+        {
+          "start": "0",
+          "label": 1
+        },
+        {
+          "start": "4",
+          "label": 2
+        },
+        {
+          "start": "8",
+          "label": 3
+        },
+        {
+          "start": "12",
+          "label": 4
+        },
+        {
+          "start": "16",
+          "label": 5
+        },
+        {
+          "start": "20",
+          "label": 6
+        },
+        {
+          "start": "24",
+          "label": 7
+        },
+        {
+          "start": "28",
+          "label": 8
+        }
+      ],
+      "estimatedResultCount": "366000",
+      "currentPageIndex": 0,
+      "moreResultsUrl": "http://www.google.com/search?oe=utf8&ie=utf8&source=uds&start=0&hl=it&q=golang",
+      "searchResultTime": "0,22"
+    }
+  },
+  "responseDetails": null,
+  "responseStatus": 200
+}
