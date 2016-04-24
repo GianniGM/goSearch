@@ -1,6 +1,7 @@
 # goSearch 
 
 A telegram bot written in go using [Telebot](https://github.com/cortinico/telebot) skeleton.
+
 It does web Searches on Google for you.
 
 ## Usage
@@ -11,7 +12,9 @@ a list of suggested links.
 ## Configuration
 
 1) download [telebot](https://github.com/cortinico/telebot)
+
 2) create new bot using [botFather](https://telegram.me/BotFather)
+
 3) add your API key and botname
 
 ```go
