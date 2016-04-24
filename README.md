@@ -29,4 +29,4 @@ a list of suggested links.
 
 ## Licence
 
-The following software is released under the [GPL3](https://github.com/GianniGM/goSearch/blob/master/LICENSE)
+The following software is released under the [GPL3 License](https://github.com/GianniGM/goSearch/blob/master/LICENSE)
