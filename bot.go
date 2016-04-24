@@ -9,8 +9,8 @@ func main() {
 
 	var bot telebot.Bot
 	conf := telebot.Configuration{
-		BotName: "SearchGobot",
-		ApiKey:  "204011400:AAGasqp4x-XIupLiXSYGCLy7e0T7vVRAsZg",
+		BotName: "YourBotName_bot",
+		ApiKey:  "162227600:!!!YOURAPIKEY!!!!BBBBCCCCCCCCCDDDDD"
 	}
 
 	// bot start è una funzione che prende le configurazioni per collegarsi

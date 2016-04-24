@@ -21,7 +21,8 @@ a list of suggested links.
 
 	conf := telebot.Configuration{
 		BotName: "YourBotName_bot",
-		ApiKey:  "162227600:!!!YOURAPIKEY!!!!BBBBCCCCCCCCCDDDDD"}
+		ApiKey:  "162227600:!!!YOURAPIKEY!!!!BBBBCCCCCCCCCDDDDD"
+	}
 
 ```
 
