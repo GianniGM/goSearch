@@ -2,8 +2,10 @@ package main
 
 //package esterno da scaricare
 import (
-	"github.com/cortinico/telebot"
-	"googleSearch/gSearch"
+	"errors"
+	"github.com/GianniGM/telebot"
+	"googleSearch/user"
+	"strings"
 )
 
 func main() {
@@ -21,41 +23,55 @@ func main() {
 
 	//aggiungi un contatore che si incremente ogni volta che facciamo /next e cerchiamo il successivo
 	//cerchiamo nell'array di sendgooglesearchrequest(mess, i) quando i arriva al massimo answer prende valore "finished"
-	index := 0
 
-	var search []string
-	bot.Start(conf, func(mess string) (string, error) {
+	m := make(map[string]user.User)
+
+	bot.Start(conf, func(userName string, mess string) (string, error) {
 		var answer string
-		switch mess {
+		var usr user.User
+		var ok bool
+
+		if userName == "" {
+			err := errors.New("Unable to find username")
+			return "", err
+		}
+
+		userName = "@" + userName
+
+		if usr, ok = m[userName]; !ok {
+			//user not exists in the map
+			usr = user.User{Name: userName}
+		}
+		//user exists in the map
+
+		message := strings.SplitAfterN(mess, " ", 2)
+		cmd := strings.TrimSpace(message[0])
+
+		switch cmd {
 		case "":
 			answer = "Welcome to SearchGobot!\nType a term you want to search or /help"
 		case "/start":
 			answer = "Welcome to SearchGobot!\nType a term you want to search or /help"
 		case "/help":
-			answer = "It's simple, just type what you want to search using google"
+			answer = "It's simple, /search and type what you want to search using google"
 		case "/prev":
-			index--
-			if index <= 0 {
-				index = 0
-				answer = search[index] + "/next ➡️\n."
-			} else {
-				answer = search[index] + "⬅️ /prev ---- /next ➡️\n."
-			}
 
 		case "/next":
-			index++
-			if index < len(search) {
-				answer = search[index] + "⬅️ /prev ---- /next ➡️\n."
+
+		case "/search":
+			if len(message) > 1 && message[1] != "" {
+				//do search of message[1]
+				answer = usr.Search(message[1])
 			} else {
-				answer = "no more results! :)\n⬅️ /prev"
+				answer = usr.GetName() + "typed Term you wanna seaerch!"
 			}
+
 		default:
-			index = 0
-			search = gSearch.SendGoogleSearchRequest(mess)
-			if search == nil {
-				answer = "Sorry! Not found :("
+			if mess != "" {
+				//do search of mess
+				answer = usr.Search(mess)
 			} else {
-				answer = search[index] + "/next ➡️\n."
+				answer = "you typed nothing!"
 			}
 		}
 		return answer, nil

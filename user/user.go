@@ -37,9 +37,9 @@ func (u *User) Search(tts string) string {
 func (u *User) GetNext() string {
 	if u.index < len(u.searchResults) {
 		u.index++
-		return u.searchResults[u.index]
+		return u.searchResults[u.index] + "⬅️ /prev ---- /next ➡️\n."
 	} else {
-		return "no more results! :)"
+		return "no more results! :)\n⬅️ /prev"
 	}
 
 }
@@ -47,8 +47,8 @@ func (u *User) GetNext() string {
 func (u *User) GetPrev() string {
 	if u.index > 0 {
 		u.index--
-		return u.searchResults[u.index]
+		return u.searchResults[u.index] + "⬅️ /prev ---- /next ➡️\n."
 	} else {
-		return u.searchResults[0]
+		return u.searchResults[0] + "/next ➡️\n."
 	}
 }
