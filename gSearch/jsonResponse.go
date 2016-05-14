@@ -1,4 +1,4 @@
-package main
+package gSearch
 
 type googleSearchResponse struct {
 	ResponseData    googleResponseData `json: "responseData"`

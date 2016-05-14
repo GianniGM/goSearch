@@ -1,4 +1,4 @@
-package main
+package gSearch
 
 import (
 	"encoding/json"

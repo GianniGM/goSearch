@@ -3,14 +3,15 @@ package main
 //package esterno da scaricare
 import (
 	"github.com/cortinico/telebot"
+	"googleSearch/gSearch"
 )
 
 func main() {
 
 	var bot telebot.Bot
 	conf := telebot.Configuration{
-		BotName: "YourBotName_bot",
-		ApiKey:  "162227600:!!!YOURAPIKEY!!!!BBBBCCCCCCCCCDDDDD"
+		BotName: "GoSearchBot",
+		ApiKey:  "123456789:AAAAAAAPIKEYHEREEEEEEE",
 	}
 
 	// bot start è una funzione che prende le configurazioni per collegarsi
@@ -50,7 +51,7 @@ func main() {
 			}
 		default:
 			index = 0
-			search = SendGoogleSearchRequest(mess)
+			search = gSearch.SendGoogleSearchRequest(mess)
 			if search == nil {
 				answer = "Sorry! Not found :("
 			} else {
