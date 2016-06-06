@@ -10,11 +10,6 @@ import (
 
 func SendGoogleSearchRequest(termToSearch string) *[]string {
 
-	SearchEngineID := "009615410364705714988:rcmso689hos"
-	APIgSearchKey := "AIzaSyCCnNVYn9hxvBJwNx8N9wzv0tHxUMoxAHQ"
-
-	url := "https://www.googleapis.com/customsearch/v1?q=" + url.QueryEscape(termToSearch) + "&cx=" + SearchEngineID + "&key=" + APIgSearchKey
-
 	//TODO: must formatting termToSearch to url mode
 	// url := "http://ajax.googleapis.com/ajax/services/search/web?v=1.0&q=" + url.QueryEscape(termToSearch)
 
