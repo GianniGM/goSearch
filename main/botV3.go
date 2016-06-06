@@ -3,19 +3,19 @@ package main
 //package esterno da scaricare
 import (
 	"errors"
-	"fmt"
-	"github.com/GianniGM/telebot"
+	"github.com/GianniGM/telebotgae"
 	"googleSearch/user"
 	"strings"
 )
 
 func main() {
 
-	var bot telebot.Bot
-	conf := telebot.Configuration{
+	var bot telebotgae.Bot
+	conf := telebotgae.Configuration{
 		BotName: "EchoBot",
 		ApiKey:  "123456789:AAAAAAAPIKEYHEREEEEEEE",
 	}
+
 
 	// bot start è una funzione che prende le configurazioni per collegarsi
 	// e una funziona (perché in go la funzione è un tipo)
@@ -25,11 +25,13 @@ func main() {
 	//aggiungi un contatore che si incremente ogni volta che facciamo /next e cerchiamo il successivo
 	//cerchiamo nell'array di sendgooglesearchrequest(mess, i) quando i arriva al massimo answer prende valore "finished"
 
-	m := make(map[string]*user.User)
+	// questa potrebbe diventare una struttura molto molto grossa
+	// trovare un modo per pulire ciò che non serve
+	m := make(map[string]user.User)
 
-	bot.Start(conf, func(recMess telebot.TeleMessage) (string, error) {
+	bot.Startgae(conf, func(recMess telebot.TeleMessager, *http.Request) (string, error) {
 		var answer string
-		var usr *user.User
+		var usr user.User
 		var ok bool
 
 		if recMess.From.Uname == "" {
@@ -42,10 +44,9 @@ func main() {
 
 		if usr, ok = m[userName]; !ok {
 			//user not exists in the map
-			u := user.User{Name: userName}
-			m[userName] = &u
-			usr = &u
-			fmt.Println("!!!NOT FOUND!!!")
+			// create one 
+			usr = user.User{Name: userName}
+			m[userName] = usr
 		}
 		//user exists in the map
 
@@ -53,56 +54,28 @@ func main() {
 		cmd := strings.TrimSpace(message[0])
 
 		switch cmd {
-
 		case "/start":
-
 			answer = "Welcome to SearchGobot!\nType a term you want to search or /help"
-
 		case "/help":
-
 			answer = "It's simple, /search and type what you want to search using google"
-
 		case "/prev":
-
-			if str, first := usr.GetPrev(); first != "" {
-				answer = first + "\n/next ➡️\n."
-			} else {
-				answer = str + "\n⬅️ /prev ---- /next ➡️\n."
-			}
-
+			answer = usr.GetPrev()
 		case "/next":
-
-			if str, last := usr.GetNext(); last != "" {
-				answer = last + "⬅️ /prev"
-			} else {
-				answer = str + "\n⬅️ /prev ---- /next ➡️\n."
-			}
-
+			answer = usr.GetNext()
 		case "/search":
-			fmt.Println("Searching", message[1])
-
 			if len(message) > 1 && message[1] != "" {
-
 				//do search of message[1]
-				if str, err := usr.Search(message[1]); err != nil {
-					answer = "Sorry! Not Found :("
-				} else {
-					answer = usr.GetName() + " searched: " + str + "\n/next ➡️\n."
-				}
-
+				answer = usr.Search(message[1])
 			} else {
 				answer = usr.GetName() + "please, type\n /search [Term you wanna seaerch]"
 			}
 
 		default:
-			fmt.Println("Searching", mess)
-
-			if mess == "" {
-				answer = "You typed nothing! :/"
-			} else if str, err := usr.Search(mess); err != nil {
-				answer = "Sorry! Not Found :("
+			if mess != "" {
+				//do search of mess
+				answer = usr.Search(mess)
 			} else {
-				answer = usr.GetName() + " searched: " + str + "\n/next ➡️\n."
+				answer = "you typed nothing!"
 			}
 		}
 		return answer, nil
