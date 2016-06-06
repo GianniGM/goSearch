@@ -13,18 +13,24 @@ func SendGoogleSearchRequest(termToSearch string) *[]string {
 	SearchEngineID := "PASTE-YOUR-CUSTOM-SEARCH-ID"
 	APIgSearchKey := "PASTE-YOUR-GOOGLECUSTOM-SEARCH-API"
 
-	url := "https://www.googleapis.com/customsearch/v1?q=" + url.QueryEscape(termToSearch) + "&cx=" + SearchEngineID + "&key=" + APIgSearchKey
+	u, _ := url.Parse("http://google.com/customsearch/v1")
+	u.Scheme = "https"
+	u.Host = "www.googleapis.com"
 
-	//TODO: must formatting termToSearch to url mode
-	// url := "http://ajax.googleapis.com/ajax/services/search/web?v=1.0&q=" + url.QueryEscape(termToSearch)
+	v := url.Values{}
+	v.Set("q", termToSearch)
+	v.Set("cx", SearchEngineID)
+	v.Set("key", APIgSearchKey)
 
-	fmt.Println(url)
+	u.RawQuery = v.Encode()
+
+	fmt.Println(u)
 
 	//	making httpRequest
 	var resp *http.Response
 	var err error
 
-	if resp, err = http.Get(url); err != nil {
+	if resp, err = http.Get(u.String()); err != nil {
 		fmt.Printf("FATAL: Could not parse request: %v\n", err)
 		return nil
 	}
