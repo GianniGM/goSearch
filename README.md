@@ -9,7 +9,24 @@ It does web Searches on Google for you.
 When deployed on a server just type your terms to search on Telegram Client and bot will reply you 
 a list of suggested links.
 
-## Configuration
+## Custom Search configuration
+
+1) Create your Google Custom Search Engine[here](https://cse.google.com/cse/all)
+
+2) Get your Search Engine ID
+
+3) Activate your Custom Search API[here](https://console.cloud.google.com/home/dashboard)
+
+4) Paste in search.go
+
+```go
+	
+	SearchEngineID := "PASTE-YOUR-CUSTOM-SEARCH-ID"
+	APIgSearchKey := "PASTE-YOUR-GOOGLECUSTOM-SEARCH-API"
+
+```
+
+## Bot configuration
 
 1) download [telebot](https://github.com/cortinico/telebot)
 

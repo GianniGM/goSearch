@@ -1,41 +1,38 @@
-package user
+package gSearch
 
 import (
 	"errors"
-	"googleSearch/gSearchV2"
 	"strconv"
 )
 
-type UserIFace interface {
-	Set(Name string)
-	GetName() string
+type MySearchIFace interface {
 	Search(tts string) string
 	GetNext() string
 	GetPrev() string
 }
 
-type User struct {
-	Name          string
+type MySearch struct {
+	ID            int64
 	searchResults []string
 	index         int
 }
 
-// func (u *User) Set(Name string) {
+// func (u *MySearch) Set(Name string) {
 // 	u.Name = Name
 // }
 
-// func (u *User) SetName(Name string) {
+// func (u *MySearch) SetName(Name string) {
 // 	u.Name = Name
 // 	u.index = 0
 // }
 
-func (u User) GetName() string {
-	return u.Name
+func (u MySearch) GetID() int64 {
+	return u.ID
 }
 
-func (u *User) Search(tts string) (string, error) {
+func (u *MySearch) Search(tts string) (string, error) {
 	u.index = 0
-	u.searchResults = *gSearch.SendGoogleSearchRequest(tts)
+	u.searchResults = *SendGoogleSearchRequest(tts)
 	if u.searchResults == nil {
 		return "", errors.New("NOT_FOUND")
 	} else {
@@ -43,7 +40,7 @@ func (u *User) Search(tts string) (string, error) {
 	}
 }
 
-func (u *User) GetNext() (string, string) {
+func (u *MySearch) GetNext() (string, string) {
 	if u.index+1 < len(u.searchResults) {
 		u.index++
 		return strconv.Itoa(u.index+1) + "/" + strconv.Itoa(len(u.searchResults)) + "\n" + u.searchResults[u.index] + "\n", ""
@@ -53,7 +50,7 @@ func (u *User) GetNext() (string, string) {
 
 }
 
-func (u *User) GetPrev() (string, string) {
+func (u *MySearch) GetPrev() (string, string) {
 	if u.index > 0 {
 		u.index--
 		return strconv.Itoa(u.index+1) + "/" + strconv.Itoa(len(u.searchResults)) + "\n" + u.searchResults[u.index] + "\n", ""

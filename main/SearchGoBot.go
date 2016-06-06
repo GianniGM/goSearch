@@ -2,10 +2,9 @@ package main
 
 //package esterno da scaricare
 import (
-	"errors"
 	"fmt"
 	"github.com/GianniGM/telebot"
-	"googleSearch/user"
+	"googleSearch/gSearch"
 	"strings"
 )
 
@@ -13,7 +12,7 @@ func main() {
 
 	var bot telebot.Bot
 	conf := telebot.Configuration{
-		BotName: "EchoBot",
+		BotName: "SearchBot",
 		ApiKey:  "123456789:AAAAAAAPIKEYHEREEEEEEE",
 	}
 
@@ -25,29 +24,29 @@ func main() {
 	//aggiungi un contatore che si incremente ogni volta che facciamo /next e cerchiamo il successivo
 	//cerchiamo nell'array di sendgooglesearchrequest(mess, i) quando i arriva al massimo answer prende valore "finished"
 
-	m := make(map[string]*user.User)
+	m := make(map[int64]*gSearch.MySearch)
 
 	bot.Start(conf, func(recMess telebot.TeleMessage) (string, error) {
 		var answer string
-		var usr *user.User
+		var src *gSearch.MySearch
 		var ok bool
 
-		if recMess.From.Uname == "" {
-			err := errors.New("Unable to find username")
-			return "", err
-		}
+		// if recMess.From.Uname == "" {
+		// 	err := errors.New("Unable to find username")
+		// 	return "", err
+		// }
 
-		userName := "@" + recMess.From.Uname
+		id := recMess.Chat.Chatid
 		mess := recMess.Text
 
-		if usr, ok = m[userName]; !ok {
-			//user not exists in the map
-			u := user.User{Name: userName}
-			m[userName] = &u
-			usr = &u
+		if src, ok = m[id]; !ok {
+			//search not exists in the map
+			s := gSearch.MySearch{ID: id}
+			m[id] = &s
+			src = &s
 			fmt.Println("!!!NOT FOUND!!!")
 		}
-		//user exists in the map
+		//search exists in the map
 
 		message := strings.SplitAfterN(mess, " ", 2)
 		cmd := strings.TrimSpace(message[0])
@@ -64,7 +63,7 @@ func main() {
 
 		case "/prev":
 
-			if str, first := usr.GetPrev(); first != "" {
+			if str, first := src.GetPrev(); first != "" {
 				answer = first + "\n/next ➡️\n."
 			} else {
 				answer = str + "\n⬅️ /prev ---- /next ➡️\n."
@@ -72,7 +71,7 @@ func main() {
 
 		case "/next":
 
-			if str, last := usr.GetNext(); last != "" {
+			if str, last := src.GetNext(); last != "" {
 				answer = last + "⬅️ /prev"
 			} else {
 				answer = str + "\n⬅️ /prev ---- /next ➡️\n."
@@ -84,14 +83,14 @@ func main() {
 			if len(message) > 1 && message[1] != "" {
 
 				//do search of message[1]
-				if str, err := usr.Search(message[1]); err != nil {
+				if str, err := src.Search(message[1]); err != nil {
 					answer = "Sorry! Not Found :("
 				} else {
-					answer = usr.GetName() + " searched: " + str + "\n/next ➡️\n."
+					answer = "results: " + str + "\n/next ➡️\n."
 				}
 
 			} else {
-				answer = usr.GetName() + "please, type\n /search [Term you wanna seaerch]"
+				answer = "please, type\n /search [Term you wanna seaerch]"
 			}
 
 		default:
@@ -99,10 +98,10 @@ func main() {
 
 			if mess == "" {
 				answer = "You typed nothing! :/"
-			} else if str, err := usr.Search(mess); err != nil {
+			} else if str, err := src.Search(mess); err != nil {
 				answer = "Sorry! Not Found :("
 			} else {
-				answer = usr.GetName() + " searched: " + str + "\n/next ➡️\n."
+				answer = "results: " + str + "\n/next ➡️\n."
 			}
 		}
 		return answer, nil
