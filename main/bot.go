@@ -2,6 +2,7 @@ package main
 
 //package esterno da scaricare
 import (
+	"fmt"
 	"github.com/cortinico/telebot"
 	"googleSearch/gSearch"
 )
@@ -29,10 +30,13 @@ func main() {
 		switch mess {
 		case "":
 			answer = "Welcome to SearchGobot!\nType a term you want to search or /help"
+
 		case "/start":
 			answer = "Welcome to SearchGobot!\nType a term you want to search or /help"
+
 		case "/help":
 			answer = "It's simple, just type what you want to search using google"
+
 		case "/prev":
 			index--
 			if index <= 0 {
@@ -49,6 +53,7 @@ func main() {
 			} else {
 				answer = "no more results! :)\n⬅️ /prev"
 			}
+
 		default:
 			index = 0
 			search = gSearch.SendGoogleSearchRequest(mess)

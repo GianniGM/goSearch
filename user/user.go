@@ -1,9 +1,13 @@
 package user
 
-import "googleSearch/gSearch"
+import (
+	"errors"
+	"googleSearch/gSearchV2"
+	"strconv"
+)
 
 type UserIFace interface {
-	Set(name string)
+	Set(Name string)
 	GetName() string
 	Search(tts string) string
 	GetNext() string
@@ -16,39 +20,44 @@ type User struct {
 	index         int
 }
 
-// func (u *User) Set(name string) {
-// 	u.name = name
+// func (u *User) Set(Name string) {
+// 	u.Name = Name
+// }
+
+// func (u *User) SetName(Name string) {
+// 	u.Name = Name
+// 	u.index = 0
 // }
 
 func (u User) GetName() string {
 	return u.Name
 }
 
-func (u *User) Search(tts string) string {
+func (u *User) Search(tts string) (string, error) {
 	u.index = 0
-	u.searchResults = gSearch.SendGoogleSearchRequest(tts)
+	u.searchResults = *gSearch.SendGoogleSearchRequest(tts)
 	if u.searchResults == nil {
-		return "Sorry! Not Found"
+		return "", errors.New("NOT_FOUND")
 	} else {
-		return u.searchResults[0]
+		return strconv.Itoa(u.index+1) + "/" + strconv.Itoa(len(u.searchResults)) + "\n" + u.searchResults[0] + "\n", nil
 	}
 }
 
-func (u *User) GetNext() string {
-	if u.index < len(u.searchResults) {
+func (u *User) GetNext() (string, string) {
+	if u.index+1 < len(u.searchResults) {
 		u.index++
-		return u.searchResults[u.index] + "⬅️ /prev ---- /next ➡️\n."
+		return strconv.Itoa(u.index+1) + "/" + strconv.Itoa(len(u.searchResults)) + "\n" + u.searchResults[u.index] + "\n", ""
 	} else {
-		return "no more results! :)\n⬅️ /prev"
+		return "", "no more results! :)\n"
 	}
 
 }
 
-func (u *User) GetPrev() string {
+func (u *User) GetPrev() (string, string) {
 	if u.index > 0 {
 		u.index--
-		return u.searchResults[u.index] + "⬅️ /prev ---- /next ➡️\n."
+		return strconv.Itoa(u.index+1) + "/" + strconv.Itoa(len(u.searchResults)) + "\n" + u.searchResults[u.index] + "\n", ""
 	} else {
-		return u.searchResults[0] + "/next ➡️\n."
+		return "", strconv.Itoa(u.index+1) + "/" + strconv.Itoa(len(u.searchResults)) + "\n" + u.searchResults[0] + "\n"
 	}
 }
