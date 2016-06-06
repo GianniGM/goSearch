@@ -1,0 +1,323 @@
+{
+  "kind": "customsearch#search",
+  "url": {
+    "type": "application/json",
+    "template": "https://www.googleapis.com/customsearch/v1?q={searchTerms}&num={count?}&start={startIndex?}&lr={language?}&safe={safe?}&cx={cx?}&cref={cref?}&sort={sort?}&filter={filter?}&gl={gl?}&cr={cr?}&googlehost={googleHost?}&c2coff={disableCnTwTranslation?}&hq={hq?}&hl={hl?}&siteSearch={siteSearch?}&siteSearchFilter={siteSearchFilter?}&exactTerms={exactTerms?}&excludeTerms={excludeTerms?}&linkSite={linkSite?}&orTerms={orTerms?}&relatedSite={relatedSite?}&dateRestrict={dateRestrict?}&lowRange={lowRange?}&highRange={highRange?}&searchType={searchType}&fileType={fileType?}&rights={rights?}&imgSize={imgSize?}&imgType={imgType?}&imgColorType={imgColorType?}&imgDominantColor={imgDominantColor?}&alt=json"
+  },
+  "queries": {
+    "request": [
+      {
+        "title": "Google Custom Search - ciao",
+        "totalResults": "12500000",
+        "searchTerms": "ciao",
+        "count": 10,
+        "startIndex": 1,
+        "inputEncoding": "utf8",
+        "outputEncoding": "utf8",
+        "safe": "off",
+        "cx": "009615410364705714988:rcmso689hos"
+      }
+    ],
+    "nextPage": [
+      {
+        "title": "Google Custom Search - ciao",
+        "totalResults": "12500000",
+        "searchTerms": "ciao",
+        "count": 10,
+        "startIndex": 11,
+        "inputEncoding": "utf8",
+        "outputEncoding": "utf8",
+        "safe": "off",
+        "cx": "009615410364705714988:rcmso689hos"
+      }
+    ]
+  },
+  "context": {
+    "title": "SearchGo"
+  },
+  "searchInformation": {
+    "searchTime": 0.44816,
+    "formattedSearchTime": "0,45",
+    "totalResults": "12500000",
+    "formattedTotalResults": "12.500.000"
+  },
+  "items": [
+    {
+      "kind": "customsearch#result",
+      "title": "Ciao - Wikipedia",
+      "htmlTitle": "<b>Ciao</b> - Wikipedia",
+      "link": "https://it.wikipedia.org/wiki/Ciao",
+      "displayLink": "it.wikipedia.org",
+      "snippet": "La parola ciao (IPA: [ˈt͡ʃaːo]) è una forma di saluto amichevole ed informale \ndella lingua italiana, usata sia nell'incontrarsi, sia nell'accomiatarsi (in ...",
+      "htmlSnippet": "La parola <b>ciao</b> (IPA: [ˈt͡ʃaːo]) è una forma di saluto amichevole ed informale <br>\ndella lingua italiana, usata sia nell&#39;incontrarsi, sia nell&#39;accomiatarsi (in&nbsp;...",
+      "cacheId": "2fWVbZkneYoJ",
+      "formattedUrl": "https://it.wikipedia.org/wiki/Ciao",
+      "htmlFormattedUrl": "https://it.wikipedia.org/wiki/<b>Ciao</b>",
+      "pagemap": {
+        "metatags": [
+          {
+            "referrer": "origin-when-cross-origin"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "customsearch#result",
+      "title": "Downloading CIAO - CIAO 4.8",
+      "htmlTitle": "Downloading <b>CIAO</b> - <b>CIAO</b> 4.8",
+      "link": "http://cxc.harvard.edu/ciao/download/",
+      "displayLink": "cxc.harvard.edu",
+      "snippet": "CIAO is no longer available for 32bit Linux nor for OSX 10.6.8 & 10.7. CIAO 4.7 is \nstill available for users who are unable to upgrade their system. The platform ...",
+      "htmlSnippet": "<b>CIAO</b> is no longer available for 32bit Linux nor for OSX 10.6.8 &amp; 10.7. <b>CIAO</b> 4.7 is <br>\nstill available for users who are unable to upgrade their system. The platform&nbsp;...",
+      "cacheId": "KEVbaIun1RsJ",
+      "formattedUrl": "cxc.harvard.edu/ciao/download/",
+      "htmlFormattedUrl": "cxc.harvard.edu/<b>ciao</b>/download/",
+      "pagemap": {
+        "cse_thumbnail": [
+          {
+            "width": "110",
+            "height": "50",
+            "src": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS-7VveVESi1wMUtLxOiq9FVluDVjqQXba2cs9OhVNlS3FbiizFQPZC"
+          }
+        ],
+        "metatags": [
+          {
+            "title": "Downloading CIAO - CIAO 4.8",
+            "creator": "SAO-HEA",
+            "date": "2016-04-12",
+            "subject": "The CIAO software package for analyzing data from X-ray telescopes, including the Chandra X-ray telescope."
+          }
+        ],
+        "cse_image": [
+          {
+            "src": "http://cxc.harvard.edu/ciao/imgs/ciao_logo_navbar.gif"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "customsearch#result",
+      "title": "Ciao Thyme Cafe | Ciao Thyme",
+      "htmlTitle": "<b>Ciao</b> Thyme Cafe | <b>Ciao</b> Thyme",
+      "link": "https://ciaothyme.com/cafe",
+      "displayLink": "ciaothyme.com",
+      "snippet": "Ciao Thyme's lunch cafe is designed to elevate the Bellingham lunch experience. \nWe hope to provide delicious food, a friendly atmosphere and.",
+      "htmlSnippet": "<b>Ciao</b> Thyme&#39;s lunch cafe is designed to elevate the Bellingham lunch experience. <br>\nWe hope to provide delicious food, a friendly atmosphere and.",
+      "cacheId": "Tjt_RRjh3ZQJ",
+      "formattedUrl": "https://ciaothyme.com/cafe",
+      "htmlFormattedUrl": "https://<b>ciao</b>thyme.com/cafe",
+      "pagemap": {
+        "cse_thumbnail": [
+          {
+            "width": "341",
+            "height": "148",
+            "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDes6ZPDFJ9Pn7a2cOUoyzgPU_hwuwnNixIe-YXP07wE3euxCd8wkWOGk"
+          }
+        ],
+        "metatags": [
+          {
+            "author": "Ciao Thyme",
+            "viewport": "width=980"
+          }
+        ],
+        "cse_image": [
+          {
+            "src": "https://ciaothyme.com/media/s/media/blog/526650_10151320557347746_817028988_n_900_390_85_c1.jpg"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "customsearch#result",
+      "title": "Threads - CIAO 4.8",
+      "htmlTitle": "Threads - <b>CIAO</b> 4.8",
+      "link": "http://cxc.harvard.edu/ciao/threads/",
+      "displayLink": "cxc.harvard.edu",
+      "snippet": "May 5, 2016 ... The CIAO software package for analyzing data from X-ray telescopes, ... Search \nhttp://cxc.harvard.edu/ciao/ Contact the CXC HelpDesk.",
+      "htmlSnippet": "May 5, 2016 <b>...</b> The <b>CIAO</b> software package for analyzing data from X-ray telescopes, ... Search <br>\nhttp://cxc.harvard.edu/<b>ciao</b>/ Contact the CXC HelpDesk.",
+      "cacheId": "VpzFB5K--YUJ",
+      "formattedUrl": "cxc.harvard.edu/ciao/threads/",
+      "htmlFormattedUrl": "cxc.harvard.edu/<b>ciao</b>/threads/",
+      "pagemap": {
+        "cse_thumbnail": [
+          {
+            "width": "110",
+            "height": "50",
+            "src": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS-7VveVESi1wMUtLxOiq9FVluDVjqQXba2cs9OhVNlS3FbiizFQPZC"
+          }
+        ],
+        "metatags": [
+          {
+            "title": "Threads - CIAO 4.8",
+            "creator": "SAO-HEA",
+            "date": "2016-05-05",
+            "subject": "The CIAO software package for analyzing data from X-ray telescopes, including the Chandra X-ray telescope."
+          }
+        ],
+        "cse_image": [
+          {
+            "src": "http://cxc.harvard.edu/ciao/imgs/ciao_logo_navbar.gif"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "customsearch#result",
+      "title": "History | Cowboy Ciao",
+      "htmlTitle": "History | Cowboy <b>Ciao</b>",
+      "link": "http://cowboyciao.com/history/",
+      "displayLink": "cowboyciao.com",
+      "snippet": "Cowboy Ciao opened February 12, 1997, and it was well into 1998 before \ninformation operators stopped telling callers we didn't exist because they tried \nChow.",
+      "htmlSnippet": "Cowboy <b>Ciao</b> opened February 12, 1997, and it was well into 1998 before <br>\ninformation operators stopped telling callers we didn&#39;t exist because they tried <br>\nChow.",
+      "cacheId": "4GRHQepeeNMJ",
+      "formattedUrl": "cowboyciao.com/history/",
+      "htmlFormattedUrl": "cowboy<b>ciao</b>.com/history/",
+      "pagemap": {
+        "metatags": [
+          {
+            "viewport": "width=device-width, initial-scale=1.0"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "customsearch#result",
+      "title": "CIAO !",
+      "htmlTitle": "<b>CIAO</b> !",
+      "link": "http://www.bastl-instruments.com/modular/ciao/",
+      "displayLink": "www.bastl-instruments.com",
+      "snippet": "CIAO ! quad line output & headphones amp. 4 high quality line outputs for your \nmodular in compact format. With line level clipping indication is handy for both ...",
+      "htmlSnippet": "<b>CIAO</b> ! quad line output &amp; headphones amp. 4 high quality line outputs for your <br>\nmodular in compact format. With line level clipping indication is handy for both&nbsp;...",
+      "cacheId": "7fxFTofsmekJ",
+      "formattedUrl": "www.bastl-instruments.com/modular/ciao/",
+      "htmlFormattedUrl": "www.bastl-instruments.com/modular/<b>ciao</b>/",
+      "pagemap": {
+        "cse_thumbnail": [
+          {
+            "width": "225",
+            "height": "225",
+            "src": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTdKGUlSf5-vVOtQVkds_vTKoIty_PBv1ORAV34gXwU9a9yTjIXbkjfpt4"
+          }
+        ],
+        "metatags": [
+          {
+            "template": "Hybrid 1.2"
+          }
+        ],
+        "cse_image": [
+          {
+            "src": "http://www.bastl-instruments.com/wp-content/uploads/2016/01/ciao-600x600.jpg"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "customsearch#result",
+      "title": "Ciao! - Best reviews and opinions from real consumers - Join the ...",
+      "htmlTitle": "<b>Ciao</b>! - Best reviews and opinions from real consumers - Join the <b>...</b>",
+      "link": "http://www.ciao.com/",
+      "displayLink": "www.ciao.com",
+      "snippet": "Ciao is the leading platform to get outstanding reviews from real consumers on \nmillion of products.",
+      "htmlSnippet": "<b>Ciao</b> is the leading platform to get outstanding reviews from real consumers on <br>\nmillion of products.",
+      "cacheId": "BovciKQzjOUJ",
+      "formattedUrl": "www.ciao.com/",
+      "htmlFormattedUrl": "www.<b>ciao</b>.com/",
+      "pagemap": {
+        "cse_thumbnail": [
+          {
+            "width": "102",
+            "height": "102",
+            "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5-3dEuJO8ReuFEkCq5EC9xt6Nnhb8cMx3TXmPsYrM1vJnq9U3bSb2"
+          }
+        ],
+        "metatags": [
+          {
+            "viewport": "width=device-width, initial-scale=1",
+            "msvalidate.01": "5FBF38BB790B63B8EB4692AD8FB1FD1A"
+          }
+        ],
+        "cse_image": [
+          {
+            "src": "http://www.ciao.com/img/uk.png"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "customsearch#result",
+      "title": "Ciao - Wikipedia, the free encyclopedia",
+      "htmlTitle": "<b>Ciao</b> - Wikipedia, the free encyclopedia",
+      "link": "https://en.wikipedia.org/wiki/Ciao",
+      "displayLink": "en.wikipedia.org",
+      "snippet": "The word \"ciao is an informal salutation in the Italian language that is used for \nboth \"hello\" and \"goodbye\". Originally from the Venetian language, it has entered\n ...",
+      "htmlSnippet": "The word &quot;<b>ciao</b> is an informal salutation in the Italian language that is used for <br>\nboth &quot;hello&quot; and &quot;goodbye&quot;. Originally from the Venetian language, it has entered<br>\n&nbsp;...",
+      "cacheId": "lm0O7Yklh58J",
+      "formattedUrl": "https://en.wikipedia.org/wiki/Ciao",
+      "htmlFormattedUrl": "https://en.wikipedia.org/wiki/<b>Ciao</b>",
+      "pagemap": {
+        "metatags": [
+          {
+            "referrer": "origin-when-cross-origin"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "customsearch#result",
+      "title": "Our Menus | Cowboy Ciao",
+      "htmlTitle": "Our Menus | Cowboy <b>Ciao</b>",
+      "link": "http://cowboyciao.com/menus/",
+      "displayLink": "cowboyciao.com",
+      "snippet": "Cowboy Ciao fare, as defined by the Wine Spectator, is the epitome of Modern \nAmerican: wine-friendly, encompassing multiple global influences, balanced in ...",
+      "htmlSnippet": "Cowboy <b>Ciao</b> fare, as defined by the Wine Spectator, is the epitome of Modern <br>\nAmerican: wine-friendly, encompassing multiple global influences, balanced in&nbsp;...",
+      "cacheId": "bln8aQ-z288J",
+      "formattedUrl": "cowboyciao.com/menus/",
+      "htmlFormattedUrl": "cowboy<b>ciao</b>.com/menus/",
+      "pagemap": {
+        "cse_thumbnail": [
+          {
+            "width": "167",
+            "height": "106",
+            "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS04UPDMDic5G80jP_IUbCGh2ic6ako-kdinoCE-0h6iUdPGkq41yBZcw"
+          }
+        ],
+        "metatags": [
+          {
+            "viewport": "width=device-width, initial-scale=1.0"
+          }
+        ],
+        "cse_image": [
+          {
+            "src": "http://cowboyciao.com/wp-content/uploads/2015/07/brunch-menu2.jpg"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "customsearch#result",
+      "title": "Ciao - Wood-fired Pizza and Tuscan inspired Pasta",
+      "htmlTitle": "<b>Ciao</b> - Wood-fired Pizza and Tuscan inspired Pasta",
+      "link": "http://ciaoithaca.com/",
+      "displayLink": "ciaoithaca.com",
+      "snippet": "Ciao! is a casual family style, Italian restaurant. We specialize in rustic yet refined \nItalian food with an authentic Tuscan flair. We also offer artisan pizzas that are ...",
+      "htmlSnippet": "<b>Ciao</b>! is a casual family style, Italian restaurant. We specialize in rustic yet refined <br>\nItalian food with an authentic Tuscan flair. We also offer artisan pizzas that are&nbsp;...",
+      "cacheId": "53GalniRWDYJ",
+      "formattedUrl": "ciaoithaca.com/",
+      "htmlFormattedUrl": "<b>ciao</b>ithaca.com/",
+      "pagemap": {
+        "cse_thumbnail": [
+          {
+            "width": "261",
+            "height": "193",
+            "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWHeVYbsbEe9OPnz-BCFJrwH5KQ6D-jlqD9LFl3pL1v7bmXLB5sXRx1io"
+          }
+        ],
+        "cse_image": [
+          {
+            "src": "http://ciaoithaca.com/homepage_slides/10.jpg"
+          }
+        ]
+      }
+    }
+  ]
+}
