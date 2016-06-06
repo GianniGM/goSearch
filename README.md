@@ -1,7 +1,6 @@
 # goSearch 
 
 A telegram bot written in go using [Telebot](https://github.com/cortinico/telebot) skeleton.
-
 It does web Searches on Google for you.
 
 ## Usage
@@ -11,13 +10,13 @@ a list of suggested links.
 
 ## Custom Search configuration
 
-1) Create your Google Custom Search Engine[here](https://cse.google.com/cse/all)
+1) Create your Google *Custom Search Engine* [here](https://cse.google.com/cse/all)
 
-2) Get your Search Engine ID
+2) Get your *Search Engine ID*
 
-3) Activate your Custom Search API[here](https://console.cloud.google.com/home/dashboard)
+3) Activate your *Custom Search API* [here](https://console.cloud.google.com/home/dashboard)
 
-4) Paste in search.go
+4) Paste in *search.go* your search ID and your API
 
 ```go
 	
