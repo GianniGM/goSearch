@@ -1,4 +1,4 @@
-# goSearch 
+# GoSearch 
 
 A telegram bot written in go using [Telebot](https://github.com/cortinico/telebot) skeleton.
 It does web Searches on Google for you.
