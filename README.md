@@ -27,7 +27,7 @@ a list of suggested links.
 
 ## Bot configuration
 
-1) download [telebot](https://github.com/cortinico/telebot)
+1) download my [telebot](https://github.com/GianniGM/telebot) fork
 
 2) create new bot using [botFather](https://telegram.me/BotFather)
 
