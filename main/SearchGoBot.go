@@ -12,17 +12,19 @@ func main() {
 
 	var bot telebot.Bot
 	conf := telebot.Configuration{
-		BotName: "SearchBot",
+		BotName: "NameBot",
 		ApiKey:  "123456789:AAAAAAAPIKEYHEREEEEEEE",
 	}
+
+	// conf := telebot.Configuration{
+	// 	BotName: "EchoBot",
+	// 	ApiKey:  "123456789:AAAAAAAPIKEYHEREEEEEEE",
+	// }
 
 	// bot start è una funzione che prende le configurazioni per collegarsi
 	// e una funziona (perché in go la funzione è un tipo)
 	// ricordarsi che in go le funzioni sono dei tipi
 	// comando defer (appena finisce il programma fa quello che gli dici di fare)
-
-	//aggiungi un contatore che si incremente ogni volta che facciamo /next e cerchiamo il successivo
-	//cerchiamo nell'array di sendgooglesearchrequest(mess, i) quando i arriva al massimo answer prende valore "finished"
 
 	m := make(map[int64]*gSearch.MySearch)
 
@@ -78,9 +80,9 @@ func main() {
 			}
 
 		case "/search":
-			fmt.Println("Searching", message[1])
 
 			if len(message) > 1 && message[1] != "" {
+				fmt.Println("Searching", message[1])
 
 				//do search of message[1]
 				if str, err := src.Search(message[1]); err != nil {
