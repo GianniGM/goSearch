@@ -13,7 +13,8 @@ func SendGoogleSearchRequest(termToSearch string) *[]string {
 	SearchEngineID := "PASTE-YOUR-CUSTOM-SEARCH-ID"
 	APIgSearchKey := "PASTE-YOUR-GOOGLECUSTOM-SEARCH-API"
 
-	u, _ := url.Parse("http://google.com/customsearch/v1")
+	// u, _ := url.Parse("http://google.com/customsearch/v1")
+	u := url.URL{}
 	u.Scheme = "https"
 	u.Host = "www.googleapis.com"
 

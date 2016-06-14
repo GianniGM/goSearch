@@ -11,15 +11,11 @@ import (
 func main() {
 
 	var bot telebot.Bot
+
 	conf := telebot.Configuration{
-		BotName: "NameBot",
+		BotName: "SearchGoBot",
 		ApiKey:  "123456789:AAAAAAAPIKEYHEREEEEEEE",
 	}
-
-	// conf := telebot.Configuration{
-	// 	BotName: "EchoBot",
-	// 	ApiKey:  "123456789:AAAAAAAPIKEYHEREEEEEEE",
-	// }
 
 	// bot start è una funzione che prende le configurazioni per collegarsi
 	// e una funziona (perché in go la funzione è un tipo)
