@@ -42,6 +42,10 @@ func (u *MySearch) Search(tts string) (string, error) {
 }
 
 func (u *MySearch) GetNext() (string, string) {
+	if u.searchResults == nil {
+		return "", "type /search [term you wanna search]\n"
+	}
+
 	if u.index+1 < len(u.searchResults) {
 		u.index++
 		return strconv.Itoa(u.index+1) + "/" + strconv.Itoa(len(u.searchResults)) + "\n" + u.searchResults[u.index] + "\n", ""
@@ -52,6 +56,10 @@ func (u *MySearch) GetNext() (string, string) {
 }
 
 func (u *MySearch) GetPrev() (string, string) {
+	if u.searchResults == nil {
+		return "", "type /search [term you wanna search]\n"
+	}
+
 	if u.index > 0 {
 		u.index--
 		return strconv.Itoa(u.index+1) + "/" + strconv.Itoa(len(u.searchResults)) + "\n" + u.searchResults[u.index] + "\n", ""
