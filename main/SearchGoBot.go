@@ -11,6 +11,10 @@ import (
 func main() {
 
 	var bot telebot.Bot
+	// conf := telebot.Configuration{
+	// 	BotName: "SearchGobot",
+	// 	ApiKey:  "204011400:AAEo1gz46YBfdKL-DXn7r2RAJUPOPk3pk2U",
+	// }
 
 	conf := telebot.Configuration{
 		BotName: "SearchGoBot",
@@ -42,7 +46,6 @@ func main() {
 			s := gSearch.MySearch{ID: id}
 			m[id] = &s
 			src = &s
-			fmt.Println("!!!NOT FOUND!!!")
 		}
 		//search exists in the map
 

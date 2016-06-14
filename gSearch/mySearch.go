@@ -32,8 +32,9 @@ func (u MySearch) GetID() int64 {
 
 func (u *MySearch) Search(tts string) (string, error) {
 	u.index = 0
-	u.searchResults = *SendGoogleSearchRequest(tts)
-	if u.searchResults == nil {
+	var err error
+
+	if u.searchResults, err = SendGoogleSearchRequest(tts); err != nil {
 		return "", errors.New("NOT_FOUND")
 	} else {
 		return strconv.Itoa(u.index+1) + "/" + strconv.Itoa(len(u.searchResults)) + "\n" + u.searchResults[0] + "\n", nil
