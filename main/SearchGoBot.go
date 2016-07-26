@@ -4,7 +4,7 @@ package main
 import (
 	"fmt"
 	"github.com/GianniGM/telebot"
-	"googleSearch/gSearch"
+	"github.com/GianniGM/goSearch/gSearch"
 	"strings"
 )
 
